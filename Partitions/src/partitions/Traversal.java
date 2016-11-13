@@ -35,6 +35,7 @@ public class Traversal extends SimpleFileVisitor<Path> implements Runnable {
         if (timestamp <= partition.userTimestamp) {
             partition.insertPath(timestamp, file);
         }
+        System.out.println(file);
         return FileVisitResult.CONTINUE;
     }
     

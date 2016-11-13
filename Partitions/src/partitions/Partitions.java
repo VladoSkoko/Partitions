@@ -27,12 +27,11 @@ public class Partitions {
     private List<Traversal> traversals;
     private List<Thread> threads;
     //private ReentrantLock lock;
-    private ConcurrentSkipListMap<Long, Path> paths;
-    
+    private ConcurrentSkipListMap<Long, Path> paths;   
     private Partitions(int n) {
-        userPath = "C:\\Users\\Vlado\\Desktop\\partitions\\partition";
-        userPath = userPath.replace("\\", "/");
-        //userPath = "/mnt/";
+        //userPath = "C:\\Users\\Vlado\\Desktop\\partitions\\partition";
+        //userPath = userPath.replace("\\", "/");
+        userPath = "/mnt/";
         //lock = new ReentrantLock();
         paths = new ConcurrentSkipListMap<>();
         
@@ -66,6 +65,7 @@ public class Partitions {
         try (Scanner in = new Scanner(System.in)) {
             System.out.print("Timestamp: ");
             part.userTimestamp = in.nextLong();
+            System.out.println();
         }
         
         part.threads.forEach((Thread t) -> {
@@ -81,9 +81,9 @@ public class Partitions {
         });
         
         if (!part.paths.isEmpty())
-            System.out.println("Result: " + part.paths.lastEntry().getValue());
+            System.out.println("\nResult: " + part.paths.lastEntry().getValue());
         else
-            System.out.println("Result: There is no entry with a lower or equal timestamp.");
+            System.out.println("\nResult: There is no entry with a lower or equal timestamp.");
     }
     
 }
