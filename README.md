@@ -2,11 +2,11 @@
 
 Searches through a directory organized like this:
 
-`/mnt/partition1
-/mnt/partition2
-/mnt/partition3
-...
-/mnt/partition12`
+`/mnt/partition1<br/>`
+`/mnt/partition2<br/>`
+`/mnt/partition3<br/>`
+`...<br/>`
+`/mnt/partition12`
 
 where every file name is an unix time (i.e. elapsed milliseconds since January 1, 1970 UTC), with the suffix .data
 
