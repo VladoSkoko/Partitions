@@ -29,7 +29,7 @@ public class Partitions {
     //private ReentrantLock lock;
     private ConcurrentSkipListMap<Long, Path> paths;   
     private Partitions(int n) {
-        //userPath = "C:\\Users\\Vlado\\Desktop\\partitions\\partition";
+        //userPath = "C:\\Users\\Vlado\\Desktop\\partitions\\";
         //userPath = userPath.replace("\\", "/");
         userPath = "/mnt/";
         //lock = new ReentrantLock();
@@ -39,7 +39,7 @@ public class Partitions {
         threads = new ArrayList<>();
         
         for (int i = 1; i <= n; i++) {
-            traversals.add(new Traversal(this, Paths.get(userPath + i)));
+            traversals.add(new Traversal(this, Paths.get(userPath + "partition" + i)));
         }
         
         traversals.forEach((Traversal t) -> {
